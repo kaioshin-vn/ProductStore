@@ -1,0 +1,22 @@
+﻿@using ProductStore.Model.Table;
+
+@model Product
+
+@{
+    ViewBag.Title = "Create Product";
+}
+
+<div class="form-horizontal">
+    <h4 class="text-success">Chi tiết sản phẩm</h4>
+    <div class="p-5 border my-3 border-2 rounded-2">
+        <h5>Tên : @Model.Name</h5>
+        <p>Mô tả : @Model.Description</p>
+        <p>Giá : @Model.Price.ToString("N0") VNĐ</p>
+        <p>Số lượng : @Model</p>
+        <p>Danh mục : @Model</p>
+    </div>
+    <div>
+        <a asp-action="Index" class="btn btn-warning">Trở về</a>
+    </div>
+</div>
+

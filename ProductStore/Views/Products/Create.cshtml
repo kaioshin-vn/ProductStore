@@ -1,0 +1,47 @@
+﻿@using ProductStore.Infrastrucre.Mediator.Request
+
+@model AddProductComand
+
+@{
+    ViewBag.Title = "Create Product";
+}
+
+<h2>Create Product</h2>
+<div class="form-horizontal">
+    <h4>Product</h4>
+    <hr />
+
+
+
+    <div style="width:600px;">
+        <div class="">
+            <form asp-action="Create" method="post" class="p-3 w-50 shadow">
+                <label asp-for="Name" class="">Tên sản phẩm</label>
+                <input asp-for="Name" type="text" class="form-control mb-2" id="title" />
+                <label asp-for="Description" class="">Mô tả</label>
+                <input asp-for="Description" type="text" class="form-control mb-2" id="authors" />
+                <label asp-for="Price" class="">Giá</label>
+                <input asp-for="Price" type="number" class="form-control mb-2" id="publisher" />
+                <label asp-for="Amount" class="">Số lượng</label>
+                <input asp-for="Amount" type="number" class="form-control mb-2" id="year" />
+                <label asp-for="Category" class="">Danh mục</label>
+                <input asp-for="Category" type="text" class="form-control mb-2" id="authors" />
+                <input type="submit" value="Submit" class="btn btn-primary btn-block" />
+            </form>
+        </div>
+        @if (ViewData["Error"] != null)
+        {
+            <div class="mt-5">
+                <div class="alert-danger alert bg-info">
+                    @ViewData["Error"]
+                </div>
+            </div>
+        }
+    </div>
+
+
+    <div>
+        <a asp-action="Index">Trở về</a>
+    </div>
+</div>
+
